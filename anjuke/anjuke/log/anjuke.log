@@ -1,0 +1,126 @@
+!!!!!!!!!13641730256
+!!!!!!!!!13641730256
+INFO:scrapy.utils.log:Scrapy 1.7.3 started (bot: anjuke)
+INFO:scrapy.utils.log:Versions: lxml 4.4.1.0, libxml2 2.9.5, cssselect 1.1.0, parsel 1.5.2, w3lib 1.21.0, Twisted 19.7.0, Python 3.6.8 (tags/v3.6.8:3c6b436a57, Dec 24 2018, 00:16:47) [MSC v.1916 64 bit (AMD64)], pyOpenSSL 19.0.0 (OpenSSL 1.1.1c  28 May 2019), cryptography 2.7, Platform Windows-7-6.1.7601-SP1
+INFO:scrapy.crawler:Overridden settings: {'BOT_NAME': 'anjuke', 'DOWNLOAD_DELAY': 5, 'LOG_LEVEL': 'INFO', 'NEWSPIDER_MODULE': 'anjuke.spiders', 'SPIDER_MODULES': ['anjuke.spiders'], 'USER_AGENT': ('Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',)}
+INFO:scrapy.extensions.telnet:Telnet Password: 848e8b33137dea74
+INFO:scrapy.middleware:Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+INFO:scrapy.middleware:Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'anjuke.middlewares.AnjukeDownloaderMiddleware',
+ 'anjuke.middlewares.ProxyMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+INFO:scrapy.middleware:Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+INFO:scrapy.middleware:Enabled item pipelines:
+['anjuke.pipelines.AnjukePipeline']
+INFO:scrapy.core.engine:Spider opened
+INFO:scrapy.extensions.logstats:Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+INFO:anjuke:Spider opened: anjuke
+INFO:scrapy.extensions.telnet:Telnet console listening on 127.0.0.1:6023
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://shanghai.anjuke.com/prop/view/A1784181767?from=filter&spread=commsearch_p&uniqid=pc5d5a454005bb37.26636206&position=3&kwtype=filter&now_time=1566197056> (referer: None)
+DEBUG:scrapy.downloadermiddlewares.redirect:Redirecting (302) to <GET https://www.anjuke.com/captcha-verify/?callback=shield&from=antispam&serialID=a1da37a586da1d163f162c50a7b08006_8c8fa1975ed34f10a6a8a94ed92898c8&history=aHR0cHM6Ly9zaGFuZ2hhaS5hbmp1a2UuY29tL3YzL2FqYXgvYnJva2VyL3Bob25lLz9icm9rZXJfaWQ9MTAwMjE4NjExJnRva2VuPTJmMTNhMWYyOWNkYThmMDVlZmQxNzIzMzYzYjU2MWE1JnByb3BfaWQ9MTc4NDE4MTc2NyZwcm9wX2NpdHlfaWQ9MTE%3D> from <GET https://shanghai.anjuke.com/v3/ajax/broker/phone/?broker_id=100218611&token=2f13a1f29cda8f05efd1723363b561a5&prop_id=1784181767&prop_city_id=11>
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://www.anjuke.com/captcha-verify/?callback=shield&from=antispam&serialID=a1da37a586da1d163f162c50a7b08006_8c8fa1975ed34f10a6a8a94ed92898c8&history=aHR0cHM6Ly9zaGFuZ2hhaS5hbmp1a2UuY29tL3YzL2FqYXgvYnJva2VyL3Bob25lLz9icm9rZXJfaWQ9MTAwMjE4NjExJnRva2VuPTJmMTNhMWYyOWNkYThmMDVlZmQxNzIzMzYzYjU2MWE1JnByb3BfaWQ9MTc4NDE4MTc2NyZwcm9wX2NpdHlfaWQ9MTE%3D> (referer: https://shanghai.anjuke.com/prop/view/A1784181767?from=filter&spread=commsearch_p&uniqid=pc5d5a454005bb37.26636206&position=3&kwtype=filter&now_time=1566197056)
+ERROR:scrapy.core.scraper:Spider error processing <GET https://www.anjuke.com/captcha-verify/?callback=shield&from=antispam&serialID=a1da37a586da1d163f162c50a7b08006_8c8fa1975ed34f10a6a8a94ed92898c8&history=aHR0cHM6Ly9zaGFuZ2hhaS5hbmp1a2UuY29tL3YzL2FqYXgvYnJva2VyL3Bob25lLz9icm9rZXJfaWQ9MTAwMjE4NjExJnRva2VuPTJmMTNhMWYyOWNkYThmMDVlZmQxNzIzMzYzYjU2MWE1JnByb3BfaWQ9MTc4NDE4MTc2NyZwcm9wX2NpdHlfaWQ9MTE%3D> (referer: https://shanghai.anjuke.com/prop/view/A1784181767?from=filter&spread=commsearch_p&uniqid=pc5d5a454005bb37.26636206&position=3&kwtype=filter&now_time=1566197056)
+Traceback (most recent call last):
+  File "C:\Users\admin\Desktop\anjuke_phone\venv\lib\site-packages\twisted\internet\defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "C:\Users\admin\Desktop\anjuke_phone\anjuke\anjuke\spiders\work.py", line 94, in get_phone
+    json_data = json.loads(response.text)
+  File "E:\Python3.6\lib\json\__init__.py", line 354, in loads
+    return _default_decoder.decode(s)
+  File "E:\Python3.6\lib\json\decoder.py", line 339, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "E:\Python3.6\lib\json\decoder.py", line 357, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+INFO:scrapy.core.engine:Closing spider (finished)
+INFO:scrapy.statscollectors:Dumping Scrapy stats:
+{'downloader/request_bytes': 3694,
+ 'downloader/request_count': 3,
+ 'downloader/request_method_count/GET': 3,
+ 'downloader/response_bytes': 47135,
+ 'downloader/response_count': 3,
+ 'downloader/response_status_count/200': 2,
+ 'downloader/response_status_count/302': 1,
+ 'elapsed_time_seconds': 13.094749,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2019, 8, 21, 7, 47, 10, 420123),
+ 'log_count/ERROR': 1,
+ 'log_count/INFO': 11,
+ 'request_depth_max': 1,
+ 'response_received_count': 2,
+ 'scheduler/dequeued': 3,
+ 'scheduler/dequeued/memory': 3,
+ 'scheduler/enqueued': 3,
+ 'scheduler/enqueued/memory': 3,
+ 'spider_exceptions/JSONDecodeError': 1,
+ 'start_time': datetime.datetime(2019, 8, 21, 7, 46, 57, 325374)}
+INFO:scrapy.core.engine:Spider closed (finished)
+INFO:scrapy.utils.log:Scrapy 1.7.3 started (bot: anjuke)
+INFO:scrapy.utils.log:Versions: lxml 4.4.1.0, libxml2 2.9.5, cssselect 1.1.0, parsel 1.5.2, w3lib 1.21.0, Twisted 19.7.0, Python 3.6.8 (tags/v3.6.8:3c6b436a57, Dec 24 2018, 00:16:47) [MSC v.1916 64 bit (AMD64)], pyOpenSSL 19.0.0 (OpenSSL 1.1.1c  28 May 2019), cryptography 2.7, Platform Windows-7-6.1.7601-SP1
+INFO:scrapy.crawler:Overridden settings: {'BOT_NAME': 'anjuke', 'DOWNLOAD_DELAY': 5, 'LOG_LEVEL': 'INFO', 'NEWSPIDER_MODULE': 'anjuke.spiders', 'SPIDER_MODULES': ['anjuke.spiders'], 'USER_AGENT': ('Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',)}
+INFO:scrapy.extensions.telnet:Telnet Password: b67cdf7fc4ac7da5
+INFO:scrapy.middleware:Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+INFO:scrapy.middleware:Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'anjuke.middlewares.AnjukeDownloaderMiddleware',
+ 'anjuke.middlewares.ProxyMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+INFO:scrapy.middleware:Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+INFO:scrapy.middleware:Enabled item pipelines:
+['anjuke.pipelines.AnjukePipeline']
+INFO:scrapy.core.engine:Spider opened
+INFO:scrapy.extensions.logstats:Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+INFO:anjuke:Spider opened: anjuke
+INFO:scrapy.extensions.telnet:Telnet console listening on 127.0.0.1:6023
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://shanghai.anjuke.com/prop/view/A1784181767?from=filter&spread=commsearch_p&uniqid=pc5d5a454005bb37.26636206&position=3&kwtype=filter&now_time=1566197056> (referer: None)
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://shanghai.anjuke.com/v3/ajax/broker/phone/?broker_id=100218611&token=23c24081adcb4da4fbec0a100022b5ae&prop_id=1784181767&prop_city_id=11> (referer: https://shanghai.anjuke.com/prop/view/A1784181767?from=filter&spread=commsearch_p&uniqid=pc5d5a454005bb37.26636206&position=3&kwtype=filter&now_time=1566197056)
+INFO:anjuke.spiders.work:!!!!!!!!!13641730256
+INFO:scrapy.core.engine:Closing spider (finished)
+INFO:scrapy.statscollectors:Dumping Scrapy stats:
+{'downloader/request_bytes': 2012,
+ 'downloader/request_count': 2,
+ 'downloader/request_method_count/GET': 2,
+ 'downloader/response_bytes': 36042,
+ 'downloader/response_count': 2,
+ 'downloader/response_status_count/200': 2,
+ 'elapsed_time_seconds': 4.20224,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2019, 8, 21, 7, 47, 50, 48389),
+ 'log_count/INFO': 12,
+ 'request_depth_max': 1,
+ 'response_received_count': 2,
+ 'scheduler/dequeued': 2,
+ 'scheduler/dequeued/memory': 2,
+ 'scheduler/enqueued': 2,
+ 'scheduler/enqueued/memory': 2,
+ 'start_time': datetime.datetime(2019, 8, 21, 7, 47, 45, 846149)}
+INFO:scrapy.core.engine:Spider closed (finished)
