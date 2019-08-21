@@ -4,15 +4,16 @@ import json
 import re
 import logging
 import os
+from ..items import AnjukeItem
 
 LOG_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'log', 'anjuke.log')
 # 连同scrapy信息一起输出到log
-logging.basicConfig(level=logging.DEBUG, filename=LOG_FILE)
+# logging.basicConfig(level=logging.DEBUG, filename=LOG_FILE)
 
 logger = logging.getLogger(__name__)
 # 只输出代码控制的信息到log
-# file_handler = logging.FileHandler(LOG_FILE)
-# logger.addHandler(file_handler)
+file_handler = logging.FileHandler(LOG_FILE)
+logger.addHandler(file_handler)
 
 DB_HOST = '10.30.194.84'
 DB_USER = 'developer'
@@ -53,7 +54,7 @@ class DmozSpider(scrapy.Spider):
 
     def parse(self, response):
         if response.status != 200:
-            print('请求报错，url: %s' % response.url)
+            logger.error('请求报错，url: %s' % response.url)
             return
         broker_id, token, prop_id, city_id = None, None, None, self.ajk_city_id
         html = response.text
@@ -94,9 +95,16 @@ class DmozSpider(scrapy.Spider):
             json_data = json.loads(response.text)
             if json_data['code'] == 0:
                 broker_phone = ''.join(json_data['val'].split())
-                logger.info('!!!!!!!!!%s' % broker_phone)
-                print(broker_phone)
+                logger.info(broker_phone)
+                item = AnjukeItem()
+                item['city'] = self.city
+                item['ext_code'] = response.meta['ext_code']
+                item['broker_name'] = response.meta['broker_name']
+                item['broker_company'] = response.meta['broker_company']
+                item['broker_store'] = response.meta['broker_store']
+                yield item
             else:
-                print('请求电话失败:%s' % json_data['msg'])
+                logger.error('请求电话失败:%s' % json_data['msg'])
         else:
-            print('请求报错')
+            logger.error('请求报错')
+

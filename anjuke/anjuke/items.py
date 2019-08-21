@@ -10,5 +10,10 @@ import scrapy
 
 class AnjukeItem(scrapy.Item):
 
-    id = scrapy.Field()
-    phone = scrapy.Field()
+    city = scrapy.Field()
+    ext_code = scrapy.Field()
+    broker_name = scrapy.Field()
+    broker_company = scrapy.Field()
+    broker_store = scrapy.Field()
+    broker_phone = scrapy.Field()
+
