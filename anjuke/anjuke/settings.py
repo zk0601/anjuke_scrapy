@@ -16,7 +16,7 @@ ITEM_PIPELINES = {
 
 DOWNLOADER_MIDDLEWARES = {
     'anjuke.middlewares.AnjukeDownloaderMiddleware': 544,
-    'anjuke.middlewares.ProxyMiddleware': 545,
+    # 'anjuke.middlewares.ProxyMiddleware': 545,
     'scrapy.downloadermiddlewares.retry.RetryMiddleware': None,
     'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware': None,
     'scrapy.downloadermiddlewares.cookies.CookiesMiddleware': None,
