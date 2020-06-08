@@ -108,5 +108,26 @@ class AnjukeDownloaderMiddleware(object):
 
 class ProxyMiddleware(object):
     def process_request(self, request, spider):
-        proxy = 'https://218.78.10.33:28803'
-        request.meta['proxy'] = proxy
+        proxy_list = get_dynamic_proxy_online()
+        for proxy in proxy_list:
+            request.meta['proxy'] = proxy
+
+
+import requests
+
+def get_dynamic_proxy_online():
+    """
+    从网上获取动态代理
+    :return:
+    """
+    url = """
+    http://t.11jsq.com/index.php/api/entry?method=proxyServer.generate_api_url&packid=7&fa=5&fetch_key=&groupid=0&qty=5&time=1&pro=&city=&port=1&format=json&ss=5&css=&ipport=1&et=1&dt=1&specialTxt=3&specialJson=&usertype=2
+    """
+    try:
+        rs = requests.get(url)
+        rs_json = rs.json()
+    except Exception as e:
+        pass
+    proxy_info_list = rs_json.get('data')
+    proxy_list = [proxy_info.get('IP') for proxy_info in proxy_info_list]
+    return proxy_list
