@@ -137,6 +137,11 @@ class DmozSpider(scrapy.Spider):
         print(house_info)
 
         html_text = response.xpath('.').extract_first()
+
+        imgs = response.css('#houseBasicPic>.basic-pic-list>ul>li')
+        for img in imgs:
+            img_url = img.attrib.get('data-value')
+            print(img_url)
         return
 
 
